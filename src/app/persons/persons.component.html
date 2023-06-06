@@ -1,5 +1,6 @@
-<ul>
-  <li *ngFor="let person of personList">
+<p *ngIf="isFetching">Fetching data...</p>
+<ul *ngIf="!isFetching">
+  <li *ngFor="let person of personList; index as index" (click)="onRemovePerson(index)">
     {{ person }}
   </li>
 </ul>
